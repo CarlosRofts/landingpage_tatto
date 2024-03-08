@@ -9,8 +9,14 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.24.0",
     "eslint": "^8.57.0",
+    "eslint-formatter-codeframe": "^7.32.1",
     "vite": "^5.1.4",
+    "vite-plugin-babel": "^1.2.0",
     "vite-plugin-eslint": "^1.8.1"
+  },
+  "dependencies": {
+    "terser": "^5.28.1"
   }
 }
