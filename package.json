@@ -11,12 +11,23 @@
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.24.0",
     "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-formatter-codeframe": "^7.32.1",
+    "eslint-plugin-import": "^2.29.1",
     "vite": "^5.1.4",
     "vite-plugin-babel": "^1.2.0",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-env-compatible": "^2.0.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-glsl": "^1.2.1"
   },
   "dependencies": {
-    "terser": "^5.28.1"
+    "@ashthornton/asscroll": "^2.0.11",
+    "@barba/core": "^2.9.7",
+    "dat.gui": "^0.7.9",
+    "dotenv": "^16.4.5",
+    "dotenv-expand": "^11.0.6",
+    "gsap": "^3.12.5",
+    "terser": "^5.28.1",
+    "three": "^0.162.0"
   }
 }
