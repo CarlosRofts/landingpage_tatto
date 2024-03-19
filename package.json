@@ -28,6 +28,9 @@
     "dotenv-expand": "^11.0.6",
     "gsap": "^3.12.5",
     "imagesloaded": "^5.0.0",
+    "lil-gui": "^0.19.2",
+    "lucide": "^0.358.0",
+    "lucide-static": "^0.358.0",
     "smooth-scrollbar": "^8.8.4",
     "terser": "^5.28.1",
     "three": "^0.162.0"
