@@ -5,13 +5,13 @@ import getFileName from '../utils/url/getFileName';
 console.log('menu');
 
 function renderNavbar() {
-  // const body = document.querySelector('.nav-');
-  const wrapper = document.querySelector('.nav-wrapper');
-  const fileName = getFileName();
-  // console.log('El nombre del archivo HTML actual es:', fileName);
+	// const body = document.querySelector('.nav-');
+	const wrapper = document.querySelector('.nav-wrapper');
+	const fileName = getFileName();
+	// console.log('El nombre del archivo HTML actual es:', fileName);
 
-  if (fileName === 'menu') {
-    wrapper.innerHTML = `
+	if (fileName === 'menu') {
+		wrapper.innerHTML = `
     <a href="/index">
       <div class="logo pointer-events-auto" style="z-ndex: 100">
       <span class="logo__img"></span>
@@ -19,12 +19,12 @@ function renderNavbar() {
         </div>
     </a>
     `;
-  } else {
-    if (wrapper) {
-      wrapper.innerHTML = `
+	} else {
+		if (wrapper) {
+			wrapper.innerHTML = `
       <div class="logo">
         <span class="logo__img"></span>
-        <span class="logo__text">Bella</span>
+        <span class="logo__text"></span>
       </div>
       <div class="burger">
         <a href="/pages/menu" class="burger__open">
@@ -44,8 +44,8 @@ function renderNavbar() {
       </nav>
     
   `;
-    }
-  }
+		}
+	}
 }
 
 export default renderNavbar;
