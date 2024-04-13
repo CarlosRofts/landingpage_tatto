@@ -18,6 +18,7 @@ import inittriggerFlipOnScroll from './utils/scrollTrigger/triggerFlipOnScroll.j
 import { CustomEase } from 'gsap/CustomEase';
 import { EaselPlugin } from 'gsap/EaselPlugin';
 import getFileName, { isHome } from './utils/url/getFileName.js';
+import initElasticGallery from './elasticGallery.js';
 
 renderLoader(); // 🔨 hacer que retorne las variables
 
@@ -33,13 +34,7 @@ const loaderInner = select('.loader .inner');
 const progressBar = select('.loader .progress');
 const loaderMask = select('.loader__mask');
 
-gsap.registerPlugin(
-	Flip,
-	ScrollTrigger,
-	ScrollToPlugin,
-	EaselPlugin,
-	CustomEase,
-);
+gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, EaselPlugin, CustomEase);
 
 let arrayOfLinks = gsap.utils.toArray('.main-nav a');
 let arrayOfLinksRev = gsap.utils.toArray('.main-nav a').reverse();
@@ -152,9 +147,7 @@ function initLoader() {
 			loaderContent.style.display = 'none';
 		},
 	});
-	tlLoaderOut
-		.to(lines, { yPercent: -500, stagger: 0.2 }, 0)
-		.to([loader, loaderContent], { yPercent: -100 }, 0.2); //
+	tlLoaderOut.to(lines, { yPercent: -500, stagger: 0.2 }, 0).to([loader, loaderContent], { yPercent: -100 }, 0.2); //
 	// tlLoaderOut.from('#main', { y: 150 }, 0); // bug scrollTrigger
 
 	const tlLoader = gsap.timeline();
@@ -164,9 +157,15 @@ function initLoader() {
 }
 
 function initContent() {
-	console.log('initContent call');
+	const filename = getFileName();
+
 	select('body').classList.remove('is-loading');
 	initSmoothScrollbar();
+	if (filename === 'gallery') {
+		console.log('gallery');
+		initElasticGallery({ ScrollTrigger, bodyScrollBar });
+		// elasticGallery
+	}
 	if (isHome()) {
 		mediaquery();
 		initHeaderTilt();
@@ -175,7 +174,6 @@ function initContent() {
 		inittriggerFlipOnScroll({
 			bodyScrollBar,
 			Flip,
-			Scrollbar: bodyScrollBar,
 			ScrollTrigger,
 		});
 	}
@@ -205,15 +203,7 @@ function mediaquery() {
 			sections.forEach((section) => {
 				section.removeEventListener('mouseenter', createHoverReveal);
 				section.removeEventListener('mouseleave', createHoverReveal);
-				const {
-					imgBlock,
-					mask,
-					text,
-					textCopy,
-					textMask,
-					text_p,
-					image,
-				} = section;
+				const { imgBlock, mask, text, textCopy, textMask, text_p, image } = section;
 				resetProps([imgBlock, mask, text, textCopy, textMask, text_p, image]);
 			});
 		}
@@ -347,12 +337,14 @@ function createHoverReveal(e) {
 
 	if (e.type === 'mouseenter') {
 		console.log('mouse enter');
-		tl.to([mask, imgBlock, textMask, text_p], { yPercent: 0 }, 0) //
+		tl
+			.to([mask, imgBlock, textMask, text_p], { yPercent: 0 }, 0) //
 			.to(text, { y: -getTextHeight(textCopy) / 2 }, 0)
 			.to(image, { duration: 1.1, scale: 1 }, 0);
 	} else if (e.type === 'mouseleave') {
 		console.log('mouseleave');
-		tl.to([mask, text_p], { yPercent: 100 })
+		tl
+			.to([mask, text_p], { yPercent: 100 })
 			.to([imgBlock, textMask], { yPercent: -101 }, 0) // positioning to 0 seconds in timeline, star equals
 			.to(text, { y: 0 }, 0)
 			.to(image, { duration: 1.1, scale: 1.2 }, 0);
@@ -401,7 +393,8 @@ function createPortfolioHover(e) {
 		// console.log('imagelarge', imagelarge);
 		// console.log('imagesmall', imagesmall);
 
-		tl.set(lInside, { backgroundImage: `url(${imagelarge})` })
+		tl
+			.set(lInside, { backgroundImage: `url(${imagelarge})` })
 			.set(sInside, { backgroundImage: `url(${imagesmall})` })
 			.to([largeImage, smallImage], { autoAlpha: 1 })
 			.to(allSiblings, { color: '#fff', autoAlpha: 0.2 }, 0)
@@ -414,7 +407,8 @@ function createPortfolioHover(e) {
 		const tl = gsap.timeline({
 			// onStart: () => updateBodyColor('#ACB7AE')
 		});
-		tl.to([largeImage, smallImage], { autoAlpha: 0 })
+		tl
+			.to([largeImage, smallImage], { autoAlpha: 0 })
 			.to(allLinks, { color: '#000000', autoAlpha: 1 }, 0)
 			.to(pageBackground, { backgroundColor: '#acb7ae', ease: 'none' }, 0);
 	}
@@ -492,7 +486,5 @@ function initSmoothScrollbar() {
 
 //──── Render ──────────────────────────────────────────────────────────────────────────────────
 function getPortfolioOffset(clientY) {
-	return -(
-		document.querySelector('.portfolio__categories').clientHeight - clientY
-	);
+	return -(document.querySelector('.portfolio__categories').clientHeight - clientY);
 }

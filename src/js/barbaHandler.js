@@ -39,7 +39,7 @@ function pageTransitionOut({ container, initContent, loader, loaderMask }) {
 			ease: 'power1.inOut',
 		},
 		onStart: () => {
-			sceneHandler();
+			routeHandler();
 		},
 		onComplete: () => {
 			killTriggers();
@@ -70,29 +70,41 @@ export function initPageTransitions({ loaderInner, loader, loaderMask, initConte
 			{
 				once() {
 					// do something once on the initial page load
-					sceneHandler();
+					routeHandler();
 					initLoader();
 				},
 				async leave({ current }) {
 					// animate loading screen in
-					await pageTransitionIn({ container: current.container, initContent, loader, loaderMask, loaderInner });
+					await pageTransitionIn({
+						container: current.container,
+						initContent,
+						loader,
+						loaderMask,
+						loaderInner,
+					});
 				},
 				enter({ next }) {
 					// animate loading screen away
-					pageTransitionOut({ container: next.container, loaderInner, loader, loaderMask, initContent });
+					pageTransitionOut({
+						container: next.container,
+						loaderInner,
+						loader,
+						loaderMask,
+						initContent,
+					});
 				},
 			},
 		],
 	});
 }
 
-function sceneHandler() {
+function routeHandler() {
 	const fileName = getFileName();
-	if (fileName === 'menu') {
+	if (fileName === 'gallery') {
 		scene = threeScene();
 		updateBodyColor('transparent');
 		if (scene) scene.start();
-	} else {
+	} else if (isHome()) {
 		updateBodyColor('var(--bg-dark-color)');
 		if (scene) scene.killScene();
 		scene = null;
