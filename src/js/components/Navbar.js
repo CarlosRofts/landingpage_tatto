@@ -10,12 +10,12 @@ function renderNavbar() {
 	const fileName = getFileName();
 	// console.log('El nombre del archivo HTML actual es:', fileName);
 
-	if (fileName === 'menu') {
+	if (fileName === 'gallery') {
 		wrapper.innerHTML = `
     <a href="/index">
-      <div class="logo pointer-events-auto" style="z-ndex: 100">
+      <div class="logo pointer-events-auto" style="z-index: 100">
       <span class="logo__img"></span>
-      <span class="logo__text">Bella</span>
+      <span class="logo__text"></span>
         </div>
     </a>
     `;
