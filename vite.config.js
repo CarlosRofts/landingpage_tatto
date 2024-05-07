@@ -7,7 +7,7 @@ import glsl from 'vite-plugin-glsl';
 export default defineConfig(({ command, mode }) => {
 	const env = loadEnv(mode, process.cwd(), '');
 	return {
-		base: "/landingpage_tatto/"
+		base: '/landingpage_tatto/',
 		root: 'src/',
 		publicDir: '../public/',
 		base: './',
