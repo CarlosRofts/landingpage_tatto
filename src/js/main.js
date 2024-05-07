@@ -164,7 +164,6 @@ function initContent() {
 	if (filename === 'gallery') {
 		console.log('gallery');
 		initElasticGallery({ ScrollTrigger, bodyScrollBar });
-		// elasticGallery
 	}
 	if (isHome()) {
 		mediaquery();
