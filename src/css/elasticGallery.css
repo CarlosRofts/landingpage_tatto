@@ -1,0 +1,57 @@
+.elastic-gallery-header {
+  min-height: 80vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.elastic-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Añadido para separar las imágenes */
+}
+
+.elastic-gallery .item {
+  /* margin: 5px; */
+  width: calc(50% - 10px); /* Cambiado el cálculo del ancho */
+  height: 10vh;
+  overflow: hidden;
+  display: flex; /* Agregado para que las imágenes mantengan la relación de aspecto */
+  /* align-items: center;  */
+  background-color: #333; /* Color de fondo para las cajas */
+  z-index: 2;
+  position: relative;
+}
+
+.elastic-gallery .item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Mantener la relación de aspecto cuadrada */
+}
+
+.blur {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  /* background-color: red; */
+  background: rgba(255, 0, 0, 0);
+  backdrop-filter: blur(10px); /* Aplica un desenfoque al fondo */
+  border-radius: 10px; /* Ajusta el radio de borde según sea necesario */
+  padding: 20px; /* Ajusta el padding según sea necesario */
+  padding-top: 100px;
+}
+
+.pb-200 {
+  margin-bottom: 200px;
+}
