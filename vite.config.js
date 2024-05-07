@@ -7,7 +7,8 @@ import glsl from 'vite-plugin-glsl';
 export default defineConfig(({ command, mode }) => {
 	const env = loadEnv(mode, process.cwd(), '');
 	return {
-		base: '/landingpage_tatto/',
+		base: '/landingpage_tatto/', // // ⛔ githubpages
+		// base: './', // ⛔ local
 		root: 'src/',
 		publicDir: '../public/',
 		plugins: [
@@ -31,7 +32,7 @@ export default defineConfig(({ command, mode }) => {
 		build: {
 			target: 'es2015',
 			polyfillDynamicImport: false,
-			outDir: 'dist',
+			outDir: '../dist',
 			assetsDir: '',
 			minify: 'terser',
 			sourcemap: true,
