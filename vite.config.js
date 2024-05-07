@@ -10,7 +10,6 @@ export default defineConfig(({ command, mode }) => {
 		base: '/landingpage_tatto/',
 		root: 'src/',
 		publicDir: '../public/',
-		base: './',
 		plugins: [
 			eslintPlugin({
 				cache: true,
