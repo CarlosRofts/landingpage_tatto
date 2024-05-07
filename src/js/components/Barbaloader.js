@@ -5,7 +5,7 @@ export function renderLoader() {
 		<div class="loader__mask">
 			<div class="inner">
 				<div class="progress"></div>
-				<h1></h1>
+				<h1>lorem</h1>
 			</div>
 			<!-- this will scale up -->
 		</div>
@@ -20,7 +20,7 @@ export function renderLoader() {
 			</div>
 			<div class="loader__image">
 				<div class="loader__image--mask">
-					<img src="/img/img_landscape-01-large.jpg" />
+					<img src="/img/loader1.webp" />
 				</div>
 			</div>
 		</div>
