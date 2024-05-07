@@ -159,6 +159,12 @@ a:focus-visible {
   z-index: 100;
   height: calc(var(--size-factor) * 3 * var(--item-height));
 }
+@media screen and (max-width: 600px) {
+  .gallery--row {
+    --size-factor: 1.25;
+    --item-height: 5vh;
+  }
+}
 
 .gallery--switch.gallery--row .gallery__item--m,
 .gallery--switch.gallery--row .gallery__item--l {
