@@ -1,6 +1,6 @@
 function getMouseValues(params) {
 	const { width, height, scene, camera, raycaster } = params || {};
-	if( !params){
+	if (!params) {
 		window.removeEventListener('pointermove', onMouseMove, false);
 		return;
 	}
@@ -10,7 +10,7 @@ function getMouseValues(params) {
 		scene: scene || null,
 		camera: camera || null,
 		pointer: { x: 0, y: 0 },
-		raycaster: raycaster ,
+		raycaster: raycaster,
 		pointerSpeed: { x: 0, y: 0 },
 	};
 
@@ -54,7 +54,8 @@ function getMouseValues(params) {
 			let obj = intersects[0].object;
 			obj.material.uniforms.hover.value = intersects[0].uv;
 			obj.material.uniforms.mouseSpeed.value = state.pointerSpeed;
-			console.log('obj.material.uniforms.hover.value', obj.material.uniforms.hover.value);    }
+			// console.log('obj.material.uniforms.hover.value', obj.material.uniforms.hover.value);
+		}
 	}
 
 	window.removeEventListener('pointermove', onMouseMove, false);
