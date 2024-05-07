@@ -25,7 +25,7 @@ export default function threeScene() {
 	// const gui = new GUI();
 
 	const fileName = getFileName();
-	if (fileName === 'menu') {
+	if (fileName === 'gallery') {
 		console.log('three scene');
 		renderCanvas();
 	}
@@ -96,7 +96,9 @@ export default function threeScene() {
 				hover: { value: new THREE.Vector2(0.5, 0.5) },
 				mouseSpeed: { value: new THREE.Vector2(1, 1) },
 				//   u_resolution: { value: new THREE.Vector2(0, 0) },
-				u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+				u_resolution: {
+					value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+				},
 			},
 			// side: THREE.DoubleSide,
 			transparent: true,
@@ -106,7 +108,7 @@ export default function threeScene() {
 
 		// Cargamos la textura
 		textureLoader.load(
-			'/img/texture.jpg',
+			'/img/t2.png',
 			function (texture) {
 				// Asignamos la textura al uniforme del ShaderMaterial
 				material.uniforms.uTex.value = texture;
@@ -122,7 +124,13 @@ export default function threeScene() {
 		// Mesh
 		mesh = new THREE.Mesh(plane, material);
 		scene.add(mesh);
-		getMouseValues({ width: sizes.width, height: sizes.height, scene, camera, raycaster });
+		getMouseValues({
+			width: sizes.width,
+			height: sizes.height,
+			scene,
+			camera,
+			raycaster,
+		});
 		tick();
 	}
 
