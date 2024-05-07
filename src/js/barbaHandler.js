@@ -5,6 +5,7 @@ import getFileName, { isHome } from './utils/url/getFileName.js';
 import updateBodyColor from './utils/selectors/updateByColor.js';
 import threeScene from './three/scene.js';
 import { killTriggers } from './utils/scrollTrigger/triggerFlipOnScroll.js';
+import { killElasticGalleryTriggers } from './elasticGallery.js';
 
 let scene;
 
@@ -43,7 +44,10 @@ function pageTransitionOut({ container, initContent, loader, loaderMask }) {
 		},
 		onComplete: () => {
 			killTriggers();
+			if(isHome())killElasticGalleryTriggers();
+			killElasticGalleryTriggers();
 			initContent();
+			// debugger;
 		},
 	});
 	tl.to(loader, { yPercent: 100 }).to(loaderMask, { yPercent: -80 }, 0).from(container, { y: -150 }, 0);
