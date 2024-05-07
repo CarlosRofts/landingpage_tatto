@@ -12,22 +12,24 @@ export default defineConfig(({ command, mode }) => {
 		// base: './', // ⛔ local
 		root: 'src/',
 		publicDir: '../public/',
+		// assetsInclude: ['**/*.glsl'],
+
 		plugins: [
-			// glsl({
-			// 	include: [
-			// 		// Glob pattern, or array of glob patterns to import
-			// 		'**/*.glsl',
-			// 		'**/*.wgsl',
-			// 		'**/*.vert',
-			// 		'**/*.frag',
-			// 		'**/*.vs',
-			// 		'**/*.fs',
-			// 	],
-			// 	// defaultExtension: 'glsl', // Shader suffix when no extension is specified
-			// 	// compress: false, // Compress output shader code
-			// 	// watch: true, // Recompile shader on change
-			// 	// root: 'src/', // Directory for root imports
-			// }),
+			glsl({
+				include: [
+					// Glob pattern, or array of glob patterns to import
+					'**/*.glsl',
+					'**/*.wgsl',
+					'**/*.vert',
+					'**/*.frag',
+					'**/*.vs',
+					'**/*.fs',
+				],
+				// defaultExtension: 'glsl', // Shader suffix when no extension is specified
+				// compress: false, // Compress output shader code
+				// watch: true, // Recompile shader on change
+				// root: 'src/', // Directory for root imports
+			}),
 			eslintPlugin({
 				cache: true,
 				fix: true,
@@ -43,7 +45,7 @@ export default defineConfig(({ command, mode }) => {
 					// plugins: ['@babel/plugin-proposal-decorators'],
 				},
 			}),
-			glsl(),
+			// glsl(),
 		],
 		build: {
 			target: 'es2015',

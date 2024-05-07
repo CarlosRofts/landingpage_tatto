@@ -108,7 +108,7 @@ export default function threeScene() {
 
 		// Cargamos la textura
 		textureLoader.load(
-			'/img/t2.png',
+			'../img/t2.png',
 			function (texture) {
 				// Asignamos la textura al uniforme del ShaderMaterial
 				material.uniforms.uTex.value = texture;
