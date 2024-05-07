@@ -12,7 +12,6 @@ export default defineConfig(({ command, mode }) => {
 		base: './', // ⛔ local
 		root: 'src/',
 		publicDir: '../public/',
-		// assetsInclude: ['**/*.html', '!index.html'],
 		plugins: [
 			// glsl({
 			// 	include: [
