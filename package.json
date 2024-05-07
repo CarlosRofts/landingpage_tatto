@@ -19,7 +19,8 @@
     "vite-plugin-babel": "^1.2.0",
     "vite-plugin-env-compatible": "^2.0.1",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-glsl": "^1.2.1"
+    "vite-plugin-glsl": "^1.2.1",
+    "vite-plugin-html": "^3.2.2"
   },
   "dependencies": {
     "@ashthornton/asscroll": "^2.0.11",
