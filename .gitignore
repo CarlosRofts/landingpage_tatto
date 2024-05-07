@@ -28,7 +28,3 @@ dist-ssr
 todos.md
 .env
 .env.local
-*.png
-*.svg
-*.jpg
-*.webp
