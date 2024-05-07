@@ -29,7 +29,7 @@
 }
 @font-face {
   font-family: 'MetrimLetterRegular';
-  src: url('/fonts/MetrimLetterRegular.otf') format('opentype');
+  src: url('fonts/MetrimLetterRegular.otf') format('opentype');
 }
 /* // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 100 to 900 */
@@ -247,13 +247,13 @@ header h1 span {
   top: auto;
   bottom: -3.8vw;
   left: 58%;
-  background: url('/img/loader-logo.png') no-repeat center;
+  background: url('img/loader-logo.png') no-repeat center;
   background-size: 50% 50%;
 }
 .cta__circle--logo {
   width: 7.7vw;
   height: 7.7vw;
-  background: url('../img/img_scroll-badge.svg') no-repeat center;
+  background: url('img/img_scroll-badge.svg') no-repeat center;
   background-size: 100% 100%;
   animation: rotation 45s linear infinite;
   position: absolute;
@@ -531,7 +531,7 @@ header h1 span {
   width: 100%;
   height: 100%;
   /* background-color: var(--bcg-loaderblue); */
-  background: var(--bcg-loaderblue) url('/img/loader-logo.png') no-repeat center;
+  background: var(--bcg-loaderblue) url('img/loader-logo.png') no-repeat center;
   background-size: 155px 155px;
   overflow: hidden;
 }

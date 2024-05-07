@@ -12,7 +12,7 @@ function renderNavbar() {
 
 	if (fileName === 'gallery') {
 		wrapper.innerHTML = `
-    <a href="/index">
+    <a href="../index.html">
       <div class="logo pointer-events-auto" style="z-index: 100">
       <span class="logo__img"></span>
       <span class="logo__text"></span>
@@ -29,7 +29,7 @@ function renderNavbar() {
       
       <nav class="main-nav">
         <ul>
-          <li><a href="/pages/gallery.html">Gallery</a></li>
+          <li><a href="pages/gallery.html">Gallery</a></li>
           <!-- <li><a href="#0">Blog</a></li>
           <li><a href="#0">How We Work</a></li>
           <li><a href="#0">Contact</a></li> -->

@@ -20,7 +20,7 @@ export function renderLoader() {
 			</div>
 			<div class="loader__image">
 				<div class="loader__image--mask">
-					<img src="/img/loader1.webp" />
+					<img src="img/loader1.webp" />
 				</div>
 			</div>
 		</div>
