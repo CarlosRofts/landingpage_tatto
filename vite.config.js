@@ -8,8 +8,8 @@ import { resolve } from 'path';
 export default defineConfig(({ command, mode }) => {
 	const env = loadEnv(mode, process.cwd(), '');
 	return {
-		// base: '/landingpage_tatto/', // // ⛔ githubpages
-		base: './', // ⛔ local
+		base: '/landingpage_tatto/', // // ⛔ githubpages
+		// base: './', // ⛔ local
 		root: 'src/',
 		publicDir: '../public/',
 		plugins: [
