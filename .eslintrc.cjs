@@ -21,7 +21,8 @@ module.exports = {
 	},
 	rules: {
 		'linebreak-style': ['warn', 'unix'],
-		indent: ['warn', 2, { SwitchCase: 1 }],
+		// indent: ['warn', 2, { SwitchCase: 1 }],
+		"indent": ["warn", "tab"],
 		quotes: ['warn', 'single'],
 		semi: ['warn', 'always'],
 		'no-unused-vars': 'off', // Desactiva la regla 'no-unused-vars'
