@@ -46,9 +46,7 @@ export default defineConfig(({ command, mode }) => {
 				},
 			},
 		},
-		// define: {
-		// 	'process.env': JSON.stringify(dotenv.config().parsed),
-		// },
+
 		define: {
 			'process.env.VITE_API_URL': JSON.stringify(env.VITE_API_URL),
 			'process.env.API_URL': JSON.stringify(env.API_URL),
