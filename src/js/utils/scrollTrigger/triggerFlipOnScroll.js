@@ -1,6 +1,5 @@
 import gsap from 'gsap';
 
-// Define una variable que almacenará el objeto de SmoothScrollbar
 let state = { tl: null };
 
 export default function inittriggerFlipOnScroll({ Flip, ScrollTrigger, bodyScrollBar }) {
@@ -122,8 +121,9 @@ const triggerFlipOnScroll = (galleryEl, options) => {
 			);
 		}
 
-		gsap.set('.pin-spacer', { paddingTop: '-0px' });
-		gsap.set('.pin-spacer', { margin: '300px 0px' });
+		// gsap.set('.pin-spacer', { paddingTop: '-0px' });
+		// gsap.set('.pin-spacer', { margin: '100px 0px' });
+
 		// bodyScrollBar.update();
 		// ScrollTrigger.update();
 
