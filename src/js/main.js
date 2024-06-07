@@ -401,8 +401,8 @@ function createPortfolioHover(e) {
 			.set(sInside, { backgroundImage: `url(${imagesmall})` })
 			.to([largeImage, smallImage], { autoAlpha: 1 })
 			.to(allSiblings, { color: '#fff', autoAlpha: 0.2 }, 0)
-			.to(e.target, { color: '#fff', autoAlpha: 1 }, 0)
-			.to(pageBackground, { backgroundColor: color, ease: 'none' }, 0);
+			.to(e.target, { color: '#fff', autoAlpha: 1 }, 0);
+		// .to(pageBackground, { backgroundColor: "color", ease: 'none' }, 0);
 	}
 	if (e.type === 'mouseleave') {
 		console.log('createPortfolioHover - mouseleave');
@@ -410,10 +410,8 @@ function createPortfolioHover(e) {
 		const tl = gsap.timeline({
 			// onStart: () => updateBodyColor('#ACB7AE')
 		});
-		tl
-			.to([largeImage, smallImage], { autoAlpha: 0 })
-			.to(allLinks, { color: '#000000', autoAlpha: 1 }, 0)
-			.to(pageBackground, { backgroundColor: '#acb7ae', ease: 'none' }, 0);
+		tl.to([largeImage, smallImage], { autoAlpha: 0 }).to(allLinks, { color: '#000000', autoAlpha: 1 }, 0);
+		// .to(pageBackground, { backgroundColor: '#acb7ae', ease: 'none' }, 0);
 	}
 }
 function createPortfolioMove(e) {
