@@ -15,7 +15,7 @@
   --bcg-loaderblue: #151515;
   --bcg-loaderbluedark: white;
   --bcg-loader: #ffff;
-  --bcg-fill-color: var(--bg-dark-color);
+  --bcg-fill-color: var(--text-color);
 
   --loader-width: 27.36vw;
   --loader-height: 50vh;
