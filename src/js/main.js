@@ -410,7 +410,7 @@ function createPortfolioHover(e) {
 		const tl = gsap.timeline({
 			// onStart: () => updateBodyColor('#ACB7AE')
 		});
-		tl.to([largeImage, smallImage], { autoAlpha: 0 }).to(allLinks, { color: '#000000', autoAlpha: 1 }, 0);
+		tl.to([largeImage, smallImage], { autoAlpha: 0 }).to(allLinks, { color: '#ffffff', autoAlpha: 1 }, 0);
 		// .to(pageBackground, { backgroundColor: '#acb7ae', ease: 'none' }, 0);
 	}
 }
